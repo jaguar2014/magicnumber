@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 public class MainController {
 
-    @RequestMapping("/magicnumber")
+    @RequestMapping("/")
     public String showMagicNumber(HttpServletRequest param){
 
         String number = param.getParameter("number");
@@ -19,15 +19,17 @@ public class MainController {
         int startingNumber= Integer.parseInt(number);
         String results = "Starting Number:  "+startingNumber+"<br />";
         StringBuilder sb = new StringBuilder(results);
+        sb.append(startingNumber + " ");
         while (startingNumber>0) {
+
             if (startingNumber % 2 == 0) {
 
                 startingNumber = startingNumber / 2;
-                sb.append(startingNumber+"<br />");
+                sb.append(startingNumber+" ");
                 if(startingNumber==1) break;
             } else if (startingNumber % 2 == 1) {
                 startingNumber = (startingNumber * 3) + 1;
-                sb.append(startingNumber+"<br />");
+                sb.append(startingNumber+" ");
                 if(startingNumber==1) break;
             }
 

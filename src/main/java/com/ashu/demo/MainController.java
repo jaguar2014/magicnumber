@@ -18,21 +18,22 @@ public class MainController {
         }
         int startingNumber= Integer.parseInt(number);
         String results = "Starting Number:  "+startingNumber+"<br />";
+        StringBuilder sb = new StringBuilder(results);
         while (startingNumber>0) {
             if (startingNumber % 2 == 0) {
 
                 startingNumber = startingNumber / 2;
-                results+=startingNumber+"<br />";
+                sb.append(startingNumber+"<br />");
                 if(startingNumber==1) break;
             } else if (startingNumber % 2 == 1) {
                 startingNumber = (startingNumber * 3) + 1;
-                results+=startingNumber+"<br />";
+                sb.append(startingNumber+"<br />");
                 if(startingNumber==1) break;
             }
 
         }
 
-  return results;
+  return sb.toString();
     }
 
 
